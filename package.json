@@ -1,5 +1,5 @@
 {
-  "name": "react-tailwind-css-starter-pack",
+  "name": "StudyNotion 1.1",
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:4000/api/v1",
