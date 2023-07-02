@@ -50,12 +50,12 @@ export function updateProfile(token, formData) {
       const response = await apiConnector("PUT", UPDATE_PROFILE_API, formData, {
         Authorization: `Bearer ${token}`,
       })
+      console.log("response",response);
       console.log("UPDATE_PROFILE_API API RESPONSE............", response)
 
-      // if (!response.data.success) {
-      //   throw new Error(response.data.message)
-      // }
-      // console.log(response.data.updatedUserDetails.image)
+      if (!response.data.success) {
+        throw new Error(response.data.message)
+      }
       // const userImage = response.data.updatedUserDetails.image
       //   ? response.data.updatedUserDetails.image
       //   : `https://api.dicebear.com/5.x/initials/svg?seed=${response.data.updatedUserDetails.firstName} ${response.data.updatedUserDetails.lastName}`
