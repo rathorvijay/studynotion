@@ -20,6 +20,7 @@ const ViewCourse = () => {
               dispatch(setEntireCourseData(courseData.courseDetails));
               dispatch(setCompletedLectures(courseData.completedVideos));
               let lectures = 0;
+              console.log("courseData",courseData);
               courseData?.courseDetails?.courseContent?.forEach((sec) => {
                 lectures += sec.subSection.length
               })  
@@ -31,9 +32,9 @@ const ViewCourse = () => {
 
   return (
     <>
-        <div>
-            <VideoDetailsSidebar setReviewModal={setReviewModal} />
-            <div>
+        <div className='flex w-full gap-2 mt-2'>
+            <VideoDetailsSidebar  setReviewModal={setReviewModal} />
+            <div className='w-[70%] text-white mx-auto'>
                 <Outlet />
             </div>
             {reviewModal && (<CourseReviewModal setReviewModal={setReviewModal} />)}

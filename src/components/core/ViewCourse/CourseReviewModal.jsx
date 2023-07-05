@@ -39,14 +39,14 @@ const CourseReviewModal = ({setReviewModal}) => {
     }
 
   return (
-    <div>
+    <div className="mr-[20px]">
         <div>
             {/* Modal header */}
             <div>
                 <p>Add Review</p>
                 <button 
                 onClick={() => setReviewModal(false)}
-                >
+                 >
                     Close
                 </button>
             </div>

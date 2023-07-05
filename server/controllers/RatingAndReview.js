@@ -10,6 +10,7 @@ exports.createRating = async (req, res) => {
         const userId = req.user.id;
         //fetchdata from req body
         const {rating, review, courseId} = req.body;
+        console.log("rating api",rating,review,courseId);
         //check if user is enrolled or not
         const courseDetails = await Course.findOne(
                                     {_id:courseId,
@@ -32,7 +33,7 @@ exports.createRating = async (req, res) => {
                         success:false,
                         message:'Course is already reviewed by the user',
                     });
-                }
+                }  
         //create rating and review
         const ratingReview = await RatingAndReview.create({
                                         rating, review, 

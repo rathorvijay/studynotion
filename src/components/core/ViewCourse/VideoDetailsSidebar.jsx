@@ -43,12 +43,12 @@ const VideoDetailsSidebar = ({setReviewModal}) => {
 
   return (
     <>
-        <div className='text-white'>
+        <div className='text-white w-[15%] h-screen bg-richblack-500 mx-5 p-5 flex flex-col gap-3'>
             {/* for buttons and headings */}
-            <div>
+            <div className='flex flex-col gap-4'>
                 {/* for buttons */}
-                <div>
-                    <div 
+                <div className='flex flex-col gap-4'>
+                    <div className='cursor-pointer'
                     onClick={()=> {
                         navigate("/dashboard/enrolled-courses")
                     }}
@@ -97,7 +97,7 @@ const VideoDetailsSidebar = ({setReviewModal}) => {
                                             {
                                                 course.subSection.map((topic, index) => (
                                                     <div
-                                                    className={`flex gap-5 p-5 ${
+                                                    className={`flex gap-5 p-3 ${
                                                         videoBarActive === topic._id
                                                         ? "bg-yellow-200 text-richblack-900"
                                                         : "bg-richblack-900 text-white"

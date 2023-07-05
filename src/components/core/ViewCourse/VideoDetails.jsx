@@ -159,7 +159,7 @@ const VideoDetails = () => {
 
   }
   return (
-    <div>
+    <div className='w-[85%] bg-no-repeat'>
       {
         !videoData ? (<div>
                         No Data Found
@@ -173,17 +173,18 @@ const VideoDetails = () => {
                 src={videoData?.videoUrl}
                  >
 
-                <AiFillPlayCircle  />
+                {/* <AiFillPlayCircle  /> */}
 
                 {
                     videoEnded && (
-                        <div>
+                        <div className='flex justify-end gap-8 mt-4 '>
                             {
                                 !completedLectures.includes(subSectionId) && (
                                     <IconBtn 
                                         disabled={loading}
                                         onclick={() => handleLectureCompletion()}
                                         text={!loading ? "Mark As Completed" : "Loading..."}
+                                        // customClasses="text-xl"
                                     />
                                 )
                             }
@@ -225,10 +226,10 @@ const VideoDetails = () => {
             </Player>
         )
       }
-      <h1>
+      <h1 className='font-bold text-2xl my-3'>
         {videoData?.title}
       </h1>
-      <p>
+      <p className='mt-4'>
         {videoData?.description}
       </p>
     </div>
